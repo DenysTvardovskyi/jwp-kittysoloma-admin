@@ -1,0 +1,242 @@
+{
+  "translation": {
+    "header": {
+      "navigation": {
+        "signIn": "Авторизація",
+        "signUp": "Реєстрація"
+      }
+    },
+    "home": {
+      "title": "Дашборд"
+    },
+    "signIn": {
+      "email": {
+        "title": "Е-пошта",
+        "validation": {
+          "email": "Пошта не вірна!",
+          "required": "Це поле є обов'язковим!"
+        }
+      },
+      "password": {
+        "title": "Пароль",
+        "validation": {
+          "required": "Це поле є обов'язковим!"
+        }
+      },
+      "remember": {
+        "title": "Запам'ятати мене"
+      },
+      "navigation": {
+        "register": "Зареєструватись!",
+        "logIn": "Увійти"
+      },
+      "authorized": {
+        "title": "Ви вже авторизовані",
+        "goHome": "Повернутись на головну!"
+      },
+      "loader": {
+        "title":"Авторизація..."
+      }
+    },
+    "sidebar": {
+      "dashboard": "Дашборд",
+      "users": "Користувачі",
+      "groups": "Групи",
+      "all": "Всі",
+      "create": "Створити",
+      "analytics": "Аналітика",
+      "traffic": "Трафік",
+      "activity": "Активність",
+      "newsletter": "Пошта",
+      "staff": "Працівники",
+      "logout": "Вийти"
+    },
+    "signUp": {
+      "fullname": {
+        "title": "Ім'я та Прізвище",
+        "validation": {
+          "required": "Це поле є обов'язковим!"
+        }
+      },
+      "email": {
+        "title": "Пошта",
+        "validation": {
+          "email": "Пошта не вірна!",
+          "required": "Це поле є обов'язковим!"
+        }
+      },
+      "password": {
+        "title": "Пароль",
+        "validation": {
+          "required": "Це поле є обов'язковим!"
+        }
+      },
+      "confirm": {
+        "title": "Підтвердіть Пароль",
+        "validation": {
+          "required": "Це поле є обов'язковим!",
+          "noMatch": "Паролі не співпадають!"
+        }
+      },
+      "agreement": {
+        "title": "Я прочитав",
+        "linkText": "угоду користувача",
+        "validation": {
+          "required": "Прийміть Умови!"
+        }
+      },
+      "navigation": {
+        "register": "Зареєструватись"
+      },
+      "authorized": {
+        "title": "Ви вже авторизовані",
+        "goHome": "Повернутись на головну!"
+      },
+      "loader": {
+        "title":"Реєстрація..."
+      }
+    },
+    "no-auth": {
+      "message": "Вибачте, ви не авторизовані для доступу до цієї сторінки."
+    },
+    "backHome": "Назад додому",
+    "editButton": "Редагувати",
+    "addButton": "Додати",
+    "analytics": {
+      "botType": "Бот",
+      "region": "Регіон",
+      "selectPlaceholder": "Оберіть групу",
+      "kidsAge": "Вік дітей",
+      "recommendationDay": "День надання рекомендацій",
+      "conversationState": "Стан розмови",
+      "preschoolStatus": "Статус дошкліьної освіти",
+      "subscribed": "Підписка",
+      "selectMessage": "Будь ласка, оберіть групу",
+      "emptySelectMessage": "Будь ласка, оберіть іншу групу",
+      "usersInGroup": "Користувачів у групі",
+      "comingSoon": "Скоро буде...",
+      "activity": {
+        "title": "Аналітика активності"
+      },
+      "users": {
+        "title": "Аналітика користувачів"
+      },
+      "traffic": {
+        "title": "Аналітика трафіку"
+      },
+      "newsletter": {
+        "title": "Аналітика пошти"
+      }
+    },
+    "users": {
+      "title": "Користувачі",
+      "totalKids": "Всього дітей",
+      "bot": "Бот",
+      "subscription": "Підписка",
+      "frequency": "Частота",
+      "region": "Регіон",
+      "actions": "Дії",
+      "view": "Переглянути"
+    },
+    "not-found": {
+      "title": "Вибачте, сторінка, яку ви відвідали, не існує."
+    },
+    "user-info": {
+      "title": "Інформація користувача",
+      "botType": "Тип боту",
+      "recommendationFrequency": "Частота рекомендацій",
+      "conversationState": "Стан розмови",
+      "recommendationDay": "День рекомендацій",
+      "recommendationTime": "Час рекомендацій",
+      "regionId": "Ідентифікатор регіону",
+      "isSubscribed": "Підписаний",
+      "region": "Регіон",
+      "kids": "Діти",
+      "kidsCount": "Кількість дітей",
+      "id": "Ідентифікатор",
+      "createdAt": "Дата створення",
+      "updatedAt": "Дата оновлення",
+      "children": "Діти",
+      "name": "Ім'я",
+      "age": "Вік",
+      "preschoolStatus": "Статус дошкільної освіти"
+    },
+    "days": {
+      "monday": "Понеділок",
+      "tuesday": "Вівторок",
+      "wednesday": "Середа",
+      "thursday": "Четвер",
+      "friday": "П'ятниця",
+      "saturday": "Субота",
+      "sunday": "Неділя"
+    },
+    "conversationStates": {
+      "welcome": "Вітання",
+      "parentRegion": "Регіон батьків",
+      "childName": "Ім'я дитини",
+      "childAge": "Вік дитини",
+      "lessThan3YearsOldChild": "Дитина до 3 років",
+      "preschoolStatus": "Статус дошкільної освіти",
+      "survey": "Опитування",
+      "mainMenu": "Головне меню",
+      "pause": "Пауза",
+      "skipOrTakeSurvey": "Пропустити або пройти опитування"
+    },
+    "tableLabels": {
+      "name": "Назва",
+      "customersCount": "Кількість клієнтів",
+      "description": "Опис",
+      "customerTraffics": "Трафік клієнтів",
+      "conversationStates": "Стани розмови",
+      "maxChildAge": "Максимальний вік дитини",
+      "minChildAge": "Мінімальний вік дитини",
+      "maxChildCount": "Максимальна кількість дітей",
+      "minChildCount": "Мінімальна кількість дітей",
+      "recommendationDays": "Дні рекомендацій",
+      "recommendationFrequencies": "Частота рекомендацій",
+      "updatedAt": "Оновлено",
+      "createdAt": "Створено"
+    },
+    "freequency": {
+      "daily": "Щоденно",
+      "monthly": "Щомісячно"
+    },
+    "save": "Зберегти",
+    "cancel": "Відмінити",
+    "deleteConfirm": "Ви впевнені, що хочете скасувати?",
+    "deleteMessage": "Користувача було видалено!",
+    "cancelConfirm": "Ви впевнені, що хочете видалити?",
+    "inviteAdmin": "Запросити нового адміна",
+    "groups": {
+      "title": "Групи",
+      "name": "Назва",
+      "traffic": "Трафік",
+      "users": "Користувачі",
+      "createTitle": "Створити групу",
+      "actions": "Дії",
+      "view": "Перегляд",
+      "delete": "Видалити",
+      "deleteConfirm": "Впевнені, що потрібно видалити?",
+      "deleteFinal": "Групу видалено!"
+    },
+    "account": {
+      "title": "Акаунт",
+      "firstName": "Ім'я",
+      "lastName": "Прізвище",
+      "role": "Роль",
+      "email": "Електронна пошта",
+      "joinDate": "Дата приєднання",
+      "lastUpdate": "Останнє оновлення",
+      "reset": "Скинути пароль",
+      "resetConfirm": "Впевнені, що потрібно скинути пароль?"
+    },
+    "dashboard": {
+      "users": "Кількість користувачів",
+      "groups": "Кількість груп",
+      "regions": "Кількість регіонів",
+      "regionsChart": "Користувачі по регіонам",
+      "daysChart": "Користувачі по дням",
+      "deviceChart": "Користувачі по месенджерам"
+    }
+  }
+}

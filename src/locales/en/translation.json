@@ -1,0 +1,242 @@
+{
+  "translation": {
+    "header": {
+      "navigation": {
+        "signIn": "Log In",
+        "signUp": "Register"
+      }
+    },
+    "home": {
+      "title": "Dashboard"
+    },
+    "signIn": {
+      "email": {
+        "title": "E-mail",
+        "validation": {
+          "email": "The input is not valid E-mail!",
+          "required": "Please input your E-mail!"
+        }
+      },
+      "password": {
+        "title": "Password",
+        "validation": {
+          "required": "Please input your Password!"
+        }
+      },
+      "remember": {
+        "title": "Remember me"
+      },
+      "navigation": {
+        "register": "Register now!",
+        "logIn": "Log in"
+      },
+      "authorized": {
+        "title": "You are authorized!",
+        "goHome": "Go to Home Page"
+      },
+      "loader": {
+        "title": "Process sign in..."
+      }
+    },
+    "sidebar": {
+      "dashboard": "Dashboard",
+      "users": "Users",
+      "groups": "Groups",
+      "all": "All",
+      "create": "Create",
+      "analytics": "Analytics",
+      "traffic": "Traffic",
+      "activity": "Activity",
+      "newsletter": "Newsletter",
+      "staff": "Staff",
+      "logout": "Log out"
+    },
+    "signUp": {
+      "fullname": {
+        "title": "Full Name",
+        "validation": {
+          "required": "Please input your Full Name!"
+        }
+      },
+      "email": {
+        "title": "E-mail",
+        "validation": {
+          "email": "The input is not valid E-mail!",
+          "required": "Please input your E-mail!"
+        }
+      },
+      "password": {
+        "title": "Password",
+        "validation": {
+          "required": "Please input your Password!"
+        }
+      },
+      "confirm": {
+        "title": "Confirm Password",
+        "validation": {
+          "required": "Please confirm your password!",
+          "noMatch": "The new password that you entered do not match!"
+        }
+      },
+      "agreement": {
+        "title": "I have read the",
+        "linkText": "agreement",
+        "validation": {
+          "required": "Should accept agreement"
+        }
+      },
+      "navigation": {
+        "register": "Register"
+      },
+      "authorized": {
+        "title": "You are authorized!",
+        "goHome": "Go to Home Page"
+      },
+      "loader": {
+        "title": "Process sign up..."
+      }
+    },
+    "no-auth": {
+      "message": "Sorry, you are not authorized to access this page."
+    },
+    "backHome": "Back home",
+    "editButton": "Edit",
+    "addButton": "Add",
+    "analytics": {
+      "botType": "Bot Type",
+      "region": "Region",
+      "selectPlaceholder": "Select a group",
+      "kidsAge": "Kids age",
+      "recommendationDay": "RecommendationDay",
+      "conversationState": "Conversation state",
+      "subscribed": "Subscribed",
+      "preschoolStatus": "Preschool Status",
+      "selectMessage": "Please select a group",
+      "emptySelectMessage": "Please select another group",
+      "usersInGroup": "Users in group",
+      "comingSoon": "Coming soon...",
+      "activity": {
+        "title": "Activity analytics"
+      },
+      "users": {
+        "title": "Users analytics"
+      },
+      "traffic": {
+        "title": "Traffic analytics"
+      },
+      "newsletter": {
+        "title": "Newsletter analytics"
+      }
+    },
+    "users": {
+      "title": "Users",
+      "totalKids": "Total Kids",
+      "bot": "Bot",
+      "subscription": "Subscription",
+      "frequency": "Frequency",
+      "region": "Region",
+      "actions": "Actions",
+      "view": "View"
+    },
+    "not-found": {
+      "title": "Sorry, the page you visited does not exist."
+    },
+    "user-info": {
+      "title": "User Information",
+      "botType": "Bot Type",
+      "recommendationFrequency": "Recommendation Frequency",
+      "conversationState": "Conversation State",
+      "recommendationDay": "Recommendation Day",
+      "recommendationTime": "Recommendation Time",
+      "regionId": "Region Id",
+      "isSubscribed": "Is Subscribed",
+      "region": "Region",
+      "kids": "Kids",
+      "kidsCount": "Kids Count",
+      "id": "ID",
+      "createdAt": "Created At",
+      "updatedAt": "Updated At",
+      "children": "Children",
+      "name": "Name",
+      "age": "Age",
+      "preschoolStatus": "Preschool Status"
+    },
+    "days": {
+      "monday": "Monday",
+      "tuesday": "Tuesday",
+      "wednesday": "Wednesday",
+      "thursday": "Thursday",
+      "friday": "Friday",
+      "saturday": "Saturday",
+      "sunday": "Sunday"
+    },
+    "conversationStates": {
+      "Welcome": "Welcome",
+      "ParentRegion": "ParentRegion",
+      "ChildName": "ChildName",
+      "ChildAge": "ChildAge",
+      "LessThan3YearsOldChild": "LessThan3YearsOldChild",
+      "PreschoolStatus": "PreschoolStatus",
+      "Survey": "Survey",
+      "MainMenu": "MainMenu",
+      "Pause": "Pause",
+      "SkipOrTakeSurvey": "SkipOrTakeSurvey"
+    },
+    "tableLabels":{
+      "name": "Name",
+      "customersCount": "Customer count",
+      "description": "Description",
+      "customerTraffics": "Customer Traffics",
+      "conversationStates": "Conversation states",
+      "maxChildAge": "Max child age",
+      "minChildAge": "Min child age",
+      "maxChildCount": "Max child count",
+      "minChildCount": "Min child count",
+      "recommendationDays": "Recommendation days",
+      "recommendationFrequencies": "Recommendation frequencies",
+      "updatedAt": "Updated at",
+      "createdAt": "Created at"
+    },
+    "freequency": {
+      "daily": "Daily",
+      "monthly": "Monthly"
+    },
+    "save": "Save",
+    "cancel": "Cancel",
+    "deleteConfirm": "Sure to cancel?",
+    "deleteMessage": "User was deleted!",
+    "canselConfirm": "Sure to delete?",
+    "inviteAdmin": "Invite new Admin",
+    "groups": {
+      "name": "Name",
+      "title": "Groups",
+      "traffic": "Traffic",
+      "users": "Users",
+      "createTitle": "Create group",
+      "actions": "Actions",
+      "view": "View",
+      "delete": "Delete",
+      "deleteConfirm": "Sure to delete?",
+      "deleteFinal": "Group was deleted!"
+    },
+    "account": {
+      "title": "Account",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "role": "Role",
+      "email": "Email",
+      "joinDate": "Join Date",
+      "lastUpdate": "Last Update",
+      "reset": "Reset Password",
+      "resetConfirm": "Sure to Reset Password?"
+    },
+    "dashboard": {
+      "users": "Number of users",
+      "groups": "Number of groups",
+      "regions": "Number of regions",
+      "regionsChart": "Users by regions",
+      "daysChart": "Users by days",
+      "deviceChart": "Users by messengers"
+    }
+  }
+}
