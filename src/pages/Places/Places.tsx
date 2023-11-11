@@ -99,10 +99,12 @@ export const Places: FC<IProps> = (): JSX.Element => {
       key: "id",
     },
     {
-      title: "nameUk",
+      title: "name",
       dataIndex: "tags",
-      key: "nameUk",
-      render: (record: any) => <span>{record.find((rec: any) => rec.name === "name:uk").value}</span>,
+      key: "name",
+      render: (record: any) => {
+          return <span>{record.find((rec: any) => rec.name === "name")?.value}</span>
+      },
     },
     {
       title: t("users.actions"),

@@ -56,7 +56,7 @@ export const Place: FC<IProps> = (): JSX.Element => {
         <Col xs={24}>
           {!!node && <Skeleton loading={loading} active={true}>
             <Flex justify="space-between" align="center">
-              <Title>{node?.id} | {node.tags.find((rec: any) => rec.name === "name:uk").value}</Title>
+              <Title>{node?.id} | {node.tags.find((rec: any) => rec.name === "name:uk")?.value}</Title>
             </Flex>
           </Skeleton>}
           {!!node && <Skeleton loading={loading} active={true}>
