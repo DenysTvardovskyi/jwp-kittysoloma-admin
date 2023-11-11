@@ -7,7 +7,8 @@
       }
     },
     "home": {
-      "title": "Dashboard"
+      "title": "Dashboard",
+      "welcome": "Welcome to dashboard!"
     },
     "signIn": {
       "email": {
