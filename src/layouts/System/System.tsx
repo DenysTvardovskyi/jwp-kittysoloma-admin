@@ -11,7 +11,7 @@ import { Button, Flex, Layout, Menu, MenuProps, Select } from "antd";
 import i18n from "i18next";
 import { useTranslation } from "react-i18next";
 import { useAuthorization } from "../../hooks";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { constants } from "../../styles/constants";
 import "./navigation.css";
 import { Logo } from "../../components/Logo";
