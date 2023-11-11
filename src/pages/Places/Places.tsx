@@ -87,6 +87,7 @@ export const Places: FC<IProps> = (): JSX.Element => {
   };
 
   const onPaginationChange = (page: number, pageSize: number): void => {
+    console.log(page)
     setParams({ ...params, pagination: { pageSize } });
   };
 
@@ -101,7 +102,7 @@ export const Places: FC<IProps> = (): JSX.Element => {
       title: "nameUk",
       dataIndex: "tags",
       key: "nameUk",
-      render: (record: any) => <span>{record.find((rec) => rec.name === "name:uk").value}</span>,
+      render: (record: any) => <span>{record.find((rec: any) => rec.name === "name:uk").value}</span>,
     },
     {
       title: t("users.actions"),

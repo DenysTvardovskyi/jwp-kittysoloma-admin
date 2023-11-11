@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { Button, Card, Col, Flex, Row, Skeleton } from "antd";
 import { useParams } from "react-router-dom";
 import { useApi } from "../../hooks";

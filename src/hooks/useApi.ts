@@ -9,7 +9,7 @@ import { serializeParams } from "../utils/serializer";
 import { IRegion } from "../models/region";
 import { INewsletter } from "../models/newletter";
 
-const API_URL: string = "https://sdy3dwxcmk.eu-central-1.awsapprunner.com/api";
+const API_URL: string = "https://p2gzwutmec.eu-central-1.awsapprunner.com/api";
 
 interface IApiConfig {
   loader?: boolean | string;
@@ -219,7 +219,7 @@ export const useApi: TUseApi = (): IUseApi => {
 
           http.request<{ token: string, user: IUser }>({
             method: "POST",
-            url: `${API_URL}/authentication`,
+            url: `${API_URL}/users/login`,
             headers,
             data: {
               password,

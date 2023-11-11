@@ -85,13 +85,16 @@ export const User: FC<IProps> = (): JSX.Element => {
       </Skeleton>
       {!!user && user?.lastLoginLatitude && user?.lastLoginLongitude && <Skeleton loading={!user} active={true}>
         <MapContainer
+          //@ts-ignore
           center={[ user?.lastLoginLatitude, user?.lastLoginLongitude ]}
           minZoom={12}
           maxZoom={18}
           zoom={16}
         >
           <TileLayer
+           //@ts-ignore
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            //@ts-ignore
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
           <Marker
@@ -103,6 +106,7 @@ export const User: FC<IProps> = (): JSX.Element => {
           </Marker>
         </MapContainer>
       </Skeleton>}
+
     </Flex>
   );
 };

@@ -1,9 +1,8 @@
 import { FC, useEffect, useState } from "react";
-import { Button, Col, Flex, Row, Skeleton, Table } from "antd";
+import { Col, Flex, Row, Skeleton, Table } from "antd";
 import { useParams } from "react-router-dom";
 import Title from "antd/es/typography/Title";
 import { gql, useLazyQuery } from "@apollo/client";
-import { useTranslation } from "react-i18next";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 
 interface IProps {}
@@ -27,8 +26,7 @@ const NODE = gql`
 export const Place: FC<IProps> = (): JSX.Element => {
   const { placeId } = useParams();
   const [ node, setNode ] = useState<any>();
-  const { t } = useTranslation();
-  const [ executeSearch, {loading} ] = useLazyQuery(NODE);
+  const [ executeSearch, { loading } ] = useLazyQuery(NODE);
 
   useEffect(() => {
     if (placeId) {
@@ -58,22 +56,24 @@ export const Place: FC<IProps> = (): JSX.Element => {
         <Col xs={24}>
           {!!node && <Skeleton loading={loading} active={true}>
             <Flex justify="space-between" align="center">
-              <Title>{node?.id} | {node.tags.find((rec) => rec.name === "name:uk").value}</Title>
+              <Title>{node?.id} | {node.tags.find((rec: any) => rec.name === "name:uk").value}</Title>
             </Flex>
           </Skeleton>}
           {!!node && <Skeleton loading={loading} active={true}>
             <MapContainer
-              center={[node?.location?.coordinates[1], node?.location?.coordinates[0]]}
+              //@ts-ignore
+              center={[ node?.location?.coordinates[1], node?.location?.coordinates[0] ]}
               minZoom={12}
               maxZoom={18}
               zoom={16}
             >
               <TileLayer
+                //@ts-ignore
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
               <Marker
-                position={[node?.location?.coordinates[1], node?.location?.coordinates[0]]}
+                position={[ node?.location?.coordinates[1], node?.location?.coordinates[0] ]}
               >
                 <Popup>
                   location
@@ -81,13 +81,13 @@ export const Place: FC<IProps> = (): JSX.Element => {
               </Marker>
             </MapContainer>
           </Skeleton>}
-          <Skeleton loading={loading} active={true} style={{marginTop: 16}}>
-            <Flex justify="space-between" align="center" style={{marginTop: 16}}>
+          <Skeleton loading={loading} active={true} style={{ marginTop: 16 }}>
+            <Flex justify="space-between" align="center" style={{ marginTop: 16 }}>
               <Table
 
                 loading={loading}
                 columns={config}
-                dataSource={node?.tags?.filter((tag)=> !tag.name.includes("name")) || []}
+                dataSource={node?.tags?.filter((tag: any) => !tag.name.includes("name")) || []}
                 scroll={{ x: 600 }}
               />
             </Flex>

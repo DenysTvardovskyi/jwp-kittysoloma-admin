@@ -1,24 +1,20 @@
 import React, { FC, useState } from "react";
 import {
   AppstoreOutlined,
-  CoffeeOutlined,
-  FundOutlined,
-  LogoutOutlined, MailOutlined,
+  LogoutOutlined,
   MenuFoldOutlined,
   MenuUnfoldOutlined,
   TeamOutlined,
   UserOutlined,
 } from "@ant-design/icons";
-import { Avatar, Button, Flex, Layout, Menu, MenuProps, Select } from "antd";
+import { Button, Flex, Layout, Menu, MenuProps, Select } from "antd";
 import i18n from "i18next";
 import { useTranslation } from "react-i18next";
-import Title from "antd/lib/typography/Title";
 import { useAuthorization } from "../../hooks";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { constants } from "../../styles/constants";
 import "./navigation.css";
-import { getInitials } from "../../utils";
-import {Logo} from "../../components/Logo";
+import { Logo } from "../../components/Logo";
 
 const { Header, Content, Sider } = Layout;
 
@@ -48,12 +44,10 @@ function getItem(
 }
 
 export const System: FC<IProps> = ({ children }: IProps): JSX.Element => {
-  const { user } = useAuthorization();
   const [ collapsed, setCollapsed ] = useState(false);
   const [ hasBreakPoint, setBreakPoint ] = useState(false);
   const { t } = useTranslation();
   const location = useLocation();
-  const navigate = useNavigate();
   const { resetAuthorization } = useAuthorization();
 
   const langOptions: { value: string, label: string }[] = Object.keys(LANGUAGES)
@@ -68,10 +62,8 @@ export const System: FC<IProps> = ({ children }: IProps): JSX.Element => {
     getItem(<Link to="/users">Users</Link>, "/users", <UserOutlined />),
     getItem("Place", "/place", <TeamOutlined />, [
       getItem(<Link to="/place/all">All</Link>, "/place/all"),
-      getItem(<Link to="/place/create">Create</Link>, "/place/create"),
+
     ]),
-    getItem(<Link to="/categories">Categories</Link>, "/categories", <UserOutlined />),
-    getItem(<Link to="/requests">Requests</Link>, "/requests", <UserOutlined />),
   ];
 
   return (
@@ -94,13 +86,15 @@ export const System: FC<IProps> = ({ children }: IProps): JSX.Element => {
       >
         <Flex style={{ height: "100%" }} vertical>
           <div style={{ minHeight: 64, display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <Logo/>
+            <Logo />
           </div>
           <Flex style={{ height: "100%" }} vertical justify="space-between">
             <Menu
               mode="inline"
               defaultSelectedKeys={[ location.pathname ]}
-              defaultOpenKeys={[ ""+LINKS.filter((link) => (location.pathname).split(link?.key as any).length === 2)?.[0]?.key || "" ]}
+              defaultOpenKeys={[
+                "" + LINKS.filter((link) => (location.pathname).split(link?.key as any).length === 2)?.[0]?.key || "",
+              ]}
               items={LINKS}
               style={{ background: constants.black, color: constants.white }}
             />

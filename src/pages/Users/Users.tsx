@@ -63,7 +63,7 @@ export const Users: FC<IProps> = (): JSX.Element => {
   });
 
   useEffect(() => {
-    const variables = {
+    const variables: any = {
       search,
       pageSize: params.pagination.pageSize,
       offset: params.pagination.pageSize * (params.pagination.page - 1),
@@ -81,7 +81,7 @@ export const Users: FC<IProps> = (): JSX.Element => {
   const renderView = (record: any) => {
     return (
       <Button onClick={() => navigate("/user/" + record.id)}>{t("users.view")}</Button>
-    )
+    );
   };
   const config = useUsersConfig({ onView: renderView });
 
@@ -114,6 +114,7 @@ export const Users: FC<IProps> = (): JSX.Element => {
   };
 
   const onChange: TableProps<any>["onChange"] = (pagination, filters, sorter, extra): void => {
+    console.log(filters, pagination)
     if (extra.action === "sort") {
       handleSort(sorter);
     }
