@@ -41,8 +41,7 @@ export const useAuthorization: TUseAuthorization = () => {
   };
 
   return {
-    // isAuthorized: !!accessToken,
-    isAuthorized: true,
+    isAuthorized: !!accessToken.length,
     accessToken,
     user,
     setAuthorization,

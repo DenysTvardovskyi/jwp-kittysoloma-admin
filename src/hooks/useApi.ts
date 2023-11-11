@@ -217,22 +217,24 @@ export const useApi: TUseApi = (): IUseApi => {
       signIn: ({ loader, debug, password, email }) => {
         return new Promise((resolve, reject) => {
 
-          http.request<{ token: string, user: IUser }>({
+          http.request<{ accessToken: string, user: IUser }>({
             method: "POST",
             url: `${API_URL}/users/login`,
             headers,
             data: {
               password,
               email,
+              latitude: 0,
+              longitude: 0
             },
             loader: !!loader ? loader : "Processing sign in...",
             debug,
           })
             .then((data) => {
-              const { token, user } = data;
+              const { accessToken, user } = data;
 
               return resolve({
-                accessToken: token,
+                accessToken,
                 user,
               });
             })
