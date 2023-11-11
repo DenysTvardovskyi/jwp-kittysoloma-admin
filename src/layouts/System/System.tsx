@@ -18,6 +18,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { constants } from "../../styles/constants";
 import "./navigation.css";
 import { getInitials } from "../../utils";
+import {Logo} from "../../components/Logo";
 
 const { Header, Content, Sider } = Layout;
 
@@ -71,7 +72,6 @@ export const System: FC<IProps> = ({ children }: IProps): JSX.Element => {
     ]),
     getItem(<Link to="/categories">Categories</Link>, "/categories", <UserOutlined />),
     getItem(<Link to="/requests">Requests</Link>, "/requests", <UserOutlined />),
-    getItem(<Link to="/staff">Staff</Link>, "/staff", <CoffeeOutlined />),
   ];
 
   return (
@@ -89,12 +89,12 @@ export const System: FC<IProps> = ({ children }: IProps): JSX.Element => {
         style={{
           overflow: "auto",
           height: "100vh",
-          backgroundColor: constants.blue,
+          backgroundColor: constants.black,
         }}
       >
         <Flex style={{ height: "100%" }} vertical>
           <div style={{ minHeight: 64, display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <Title level={4} style={{ margin: 0, lineHeight: 1, color: constants.white }}>Солом‘янські котики</Title>
+            <Logo/>
           </div>
           <Flex style={{ height: "100%" }} vertical justify="space-between">
             <Menu
@@ -102,7 +102,7 @@ export const System: FC<IProps> = ({ children }: IProps): JSX.Element => {
               defaultSelectedKeys={[ location.pathname ]}
               defaultOpenKeys={[ ""+LINKS.filter((link) => (location.pathname).split(link?.key as any).length === 2)?.[0]?.key || "" ]}
               items={LINKS}
-              style={{ background: constants.blue, color: constants.white }}
+              style={{ background: constants.black, color: constants.white }}
             />
 
             {collapsed
@@ -149,11 +149,11 @@ export const System: FC<IProps> = ({ children }: IProps): JSX.Element => {
               onChange={handleChange}
               options={langOptions}
             />
-            <Avatar
-              size={32}
-              style={{ cursor: "pointer", fontSize: 16 }}
-              onClick={() => navigate("/profile")}
-            >{getInitials(user)}</Avatar>
+            {/*<Avatar*/}
+            {/*  size={32}*/}
+            {/*  style={{ cursor: "pointer", fontSize: 16 }}*/}
+            {/*  onClick={() => navigate("/profile")}*/}
+            {/*>{getInitials(user)}</Avatar>*/}
           </Flex>
         </Header>
         <Content style={{ margin: "24px 16px", maxHeight: "100%" }}>

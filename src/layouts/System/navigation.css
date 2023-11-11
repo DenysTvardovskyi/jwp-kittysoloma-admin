@@ -24,3 +24,7 @@
 .ant-menu-submenu-selected i::after{
     color: #4E4040;
 }
+
+.ant-menu-item.ant-menu-item-active:hover{
+    background-color: white !important;
+}

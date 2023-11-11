@@ -201,6 +201,9 @@
       "daily": "Daily",
       "monthly": "Monthly"
     },
+    "places": {
+      "title": "Places"
+    },
     "save": "Save",
     "cancel": "Cancel",
     "deleteConfirm": "Sure to cancel?",

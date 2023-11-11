@@ -116,7 +116,7 @@ export const Places: FC<IProps> = (): JSX.Element => {
 
   return (
     <Flex gap="small" vertical>
-      <Title level={3}>{t("groups.title")}</Title>
+      <Title level={3}>{t("places.title")}</Title>
       <SearchBar onSearch={handleSearch} placeholder="Search by name" />
       <Table
         loading={loading}
