@@ -13,8 +13,10 @@
     "@ant-design/plots": "^1.2.5",
     "@apollo/client": "^3.8.7",
     "graphql": "^16.8.1",
+    "leaflet": "^1.9.4",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-leaflet": "^4.2.1"
   },
   "devDependencies": {
     "@lottiefiles/react-lottie-player": "^3.5.3",

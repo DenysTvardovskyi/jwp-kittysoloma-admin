@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { Root } from "./components";
 import "./styles/global.scss";
+import "leaflet/dist/leaflet.css";
 
 import "./i18n";
 

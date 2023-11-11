@@ -1,82 +1,97 @@
 import { FC, useEffect, useState } from "react";
-import { Button, Card, Col, Flex, Row, Skeleton } from "antd";
+import { Button, Col, Flex, Row, Skeleton, Table } from "antd";
 import { useParams } from "react-router-dom";
-import { useApi } from "../../hooks";
-import { IGroup } from "../../models/group";
 import Title from "antd/es/typography/Title";
+import { gql, useLazyQuery } from "@apollo/client";
+import { useTranslation } from "react-i18next";
+import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 
 interface IProps {}
 
-const getDate = (date: any) => new Date(date).toLocaleDateString(
-  "en-US",
-  { year: "numeric", month: "2-digit", day: "numeric" },
-);
+const NODE = gql`
+  query node($id: Long!) {
+    nodeById(id: $id) {
+    id
+    airQualityCategory
+    location {
+      coordinates
+    }
+    tags {
+      name
+      value
+    }
+  }
+}
+`;
 
 export const Place: FC<IProps> = (): JSX.Element => {
   const { placeId } = useParams();
-  const api = useApi();
-  const [ placeData, setPlaceData ] = useState<IGroup>();
-
-  const tableLabels = {
-    name: t("tableLabels.name"),
-    customersCount: t("tableLabels.customersCount"),
-    description: t("tableLabels.description"),
-    customerTraffics: t("tableLabels.customerTraffics"),
-    conversationStates: t("tableLabels.conversationStates"),
-    maxChildAge: t("tableLabels.maxChildAge"),
-    minChildAge: t("tableLabels.minChildAge"),
-    maxChildCount: t("tableLabels.maxChildCount"),
-    minChildCount: t("tableLabels.minChildCount"),
-    recommendationDays: t("tableLabels.recommendationDays"),
-    recommendationFrequencies: t("tableLabels.recommendationFrequencies"),
-    updatedAt: t("tableLabels.updatedAt"),
-    createdAt: t("tableLabels.createdAt"),
-  }
+  const [ node, setNode ] = useState<any>();
+  const { t } = useTranslation();
+  const [ executeSearch, {loading} ] = useLazyQuery(NODE);
 
   useEffect(() => {
     if (placeId) {
-      api.groups.one({ id: placeId }).then((place) => setPlaceData(place.items[0]));
+      executeSearch({ variables: { id: +placeId } }).then((data) => {
+        console.log(data);
+        setNode(data.data.nodeById);
+      });
     }
-  }, [ groupId ]);
+  }, [ placeId ]);
 
-  const handleDownload = () => {
-    if (placeId) {
-      api.groups.download({ id: placeId }).then((res) => console.log(res));
-    }
-  };
+  const config: any = [
+    {
+      title: "Name",
+      dataIndex: "name",
+      key: "name",
+    },
+    {
+      title: "Value",
+      dataIndex: "value",
+      key: "value",
+    },
+  ];
 
   return (
     <Flex vertical>
       <Row gutter={[ 24, 24 ]} justify={"center"}>
-        <Col xs={24} sm={24} md={24} lg={16} xl={8}>
-          <Skeleton loading={!placeData} active={true}>
+        <Col xs={24}>
+          {!!node && <Skeleton loading={loading} active={true}>
             <Flex justify="space-between" align="center">
-              <Title>{placeData?.name}</Title>
+              <Title>{node?.id} | {node.tags.find((rec) => rec.name === "name:uk").value}</Title>
             </Flex>
+          </Skeleton>}
+          {!!node && <Skeleton loading={loading} active={true}>
+            <MapContainer
+              center={[node?.location?.coordinates[1], node?.location?.coordinates[0]]}
+              minZoom={12}
+              maxZoom={18}
+              zoom={16}
+            >
+              <TileLayer
+                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              />
+              <Marker
+                position={[node?.location?.coordinates[1], node?.location?.coordinates[0]]}
+              >
+                <Popup>
+                  location
+                </Popup>
+              </Marker>
+            </MapContainer>
+          </Skeleton>}
+          <Skeleton loading={loading} active={true} style={{marginTop: 16}}>
+            <Flex justify="space-between" align="center" style={{marginTop: 16}}>
+              <Table
 
+                loading={loading}
+                columns={config}
+                dataSource={node?.tags?.filter((tag)=> !tag.name.includes("name")) || []}
+                scroll={{ x: 600 }}
+              />
+            </Flex>
           </Skeleton>
-
-          <Flex vertical gap={"middle"}>
-            <Skeleton loading={!placeData} active={true}>
-              <Card title={tableLabels.customersCount}>
-                <Title level={2}>{placeData?.customersCount}</Title>
-              </Card>
-            </Skeleton>
-            <Skeleton loading={!placeData} active={true}>
-              <Card title={tableLabels.createdAt}>
-                <Title level={2}>{getDate(placeData?.createdAt)}</Title>
-              </Card>
-            </Skeleton>
-            <Skeleton loading={!placeData} active={true}>
-              {placeData?.updatedAt &&
-                <Card title={tableLabels.updatedAt}>
-                  <Title level={2}>{getDate(placeData?.updatedAt)}</Title>
-                </Card>}
-            </Skeleton>
-            <Skeleton loading={!placeData} active={true}>
-              <Button onClick={handleDownload}>Download PDF</Button>
-            </Skeleton>
-          </Flex>
         </Col>
       </Row>
     </Flex>
